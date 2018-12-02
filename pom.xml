@@ -13,6 +13,7 @@
         <module>registrydemo</module>
         <module>orderclouddemo</module>
         <module>zuuldemo</module>
+        <module>quartzdemo</module>
     </modules>
 
     <parent>
