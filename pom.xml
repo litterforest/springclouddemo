@@ -14,6 +14,7 @@
         <module>orderclouddemo</module>
         <module>zuuldemo</module>
         <module>quartzdemo</module>
+        <module>core</module>
     </modules>
 
     <parent>
