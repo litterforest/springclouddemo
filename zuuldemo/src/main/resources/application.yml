@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: gateway
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      # 注册到eureka服务发现中心
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  ignored-services: '*'
+  routes:
+    orderjob:
+      path: /order/order/job/**
+      url: http://localhost:9001/order/job/
+    order:
+      path: /order/**
+      serviceId: orderms
+  host:
+    socket-timeout-millis: 1000
+
+#ribbon:
+#  orderjob:
+#    ConnectTimeout: 3000
+#    ReadTimeout: 60000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开启所有监控端点
+        include: '*'
+  endpoint:
+    routes:
+      enabled: true
+
+
+
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000
