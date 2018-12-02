@@ -20,7 +20,7 @@ zuul:
       path: /order/**
       serviceId: orderms
   host:
-    socket-timeout-millis: 1000
+    socket-timeout-millis: 100000000
 
 #ribbon:
 #  orderjob:
