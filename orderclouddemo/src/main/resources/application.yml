@@ -7,5 +7,16 @@ server:
 eureka:
   client:
     service-url:
-      # ע�ᵽeureka����������
+      # eureka注册中心的地址
       defaultZone: http://localhost:8761/eureka/
+    # 客户端多长时间去获取注册列表，默认是30秒
+    registry-fetch-interval-seconds: 5
+  instance:
+    # 心跳检测的频率, 默认是30秒
+    lease-renewal-interval-in-seconds: 5
+    # 客户端过多长时间没有发心跳给注册中心，注册中心就会清除掉对应的实例，默认是90秒，要配合注册中心的配置来使用
+    lease-expiration-duration-in-seconds: 10
+
+logging:
+  level:
+    com.netflix: debug
